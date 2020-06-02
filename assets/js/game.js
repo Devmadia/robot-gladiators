@@ -24,6 +24,12 @@ for(var i = 0; i < enemyNames.length; i++) {
     console.log(enemyNames[i] + " is at " + i + " index");
 }
 
+for (var i = 0; i < enemyNames.length; i++) {
+    debugger;
+    // call fight function with enemy robot
+    fight(enemyNames[i]);
+  }
+
 // create function to fight enemy robots
 var fight = function(enemyName) {
     // repeat and execute as long as the enemy robot is alive
