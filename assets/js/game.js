@@ -1,3 +1,9 @@
+// Game States
+// "WIN" - Player robot has defeated all enemy robots
+//    * Fight all enemy robots
+//    * Defeat each enemy robot
+// "LOSE" - Player robot's health is zero or less
+
 var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
 var playerAttack = 10;
@@ -61,7 +67,6 @@ var fight = function() {
             fight();
             }
         
-
     // this will prompt user to enter a valid option, but the program continues running at this point regardless
     } else {
         window.alert("You need to pick a valid option. Try again!");
