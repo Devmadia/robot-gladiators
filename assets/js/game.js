@@ -19,16 +19,11 @@ var enemyAttack = 12;
 
 // Details enemies by name
 for(var i = 0; i < enemyNames.length; i++) {
+    debugger; 
     console.log(enemyNames[i]);
     console.log(i);
     console.log(enemyNames[i] + " is at " + i + " index");
 }
-
-for (var i = 0; i < enemyNames.length; i++) {
-    debugger;
-    // call fight function with enemy robot
-    fight(enemyNames[i]);
-  }
 
 // create function to fight enemy robots
 var fight = function(enemyName) {
@@ -88,6 +83,12 @@ var fight = function(enemyName) {
             }
         }
     };
+
+    for (var i = 0; i < enemyNames.length; i++) {
+        debugger;
+        // call fight function with enemy robot
+        fight(enemyNames[i]);
+      }
 
     // execute function
     for(var i = 0; i < enemyNames.length; i++) {
