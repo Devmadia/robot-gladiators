@@ -46,6 +46,8 @@ var fight = function() {
     // if player choses to skip
     } else if (promptFight === "skip" || promptFight === "SKIP") {
         window.alert(playerName + " has chosen to skip the fight!");
+    
+    // this will prompt user to enter a valid option, but the program continues running at this point regardless
     } else {
         window.alert("You need to pick a valid option. Try again!");
     }
