@@ -26,8 +26,9 @@ for(var i = 0; i < enemyNames.length; i++) {
 
 // create function to fight enemy robots
 var fight = function(enemyName) {
-    // Alert users that they are starting the round
-    window.alert("Welcome to Robot Gladiators!");
+    // repeat and execute as long as the enemy robot is alive
+    while(enemyHealth > 0) {
+    
     // asks for user input if they will fight or skip battle
     var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
 
@@ -73,48 +74,16 @@ var fight = function(enemyName) {
             // if no (false), ask question again by running fight() again
             else {
             fight();
+            } 
+            
+            // this will prompt user to enter a valid option, but the program continues running at this point regardless
+            } else {
+                window.alert("You need to pick a valid option. Try again!");
             }
-        
-    // this will prompt user to enter a valid option, but the program continues running at this point regardless
-    } else {
-        window.alert("You need to pick a valid option. Try again!");
+        }
+    };
+
+    // execute function
+    for(var i = 0; i < enemyNames.length; i++) {
+        fight(enemyNames[i]);
     }
-
-    //Subtract the value of `playerAttack` from the value of `enemyHealth` and use that result to update the value in the `enemyHealth` variable
-    enemyHealth = enemyHealth - playerAttack;
-  
-    // Log a resulting message to the console so we know that it worked.
-    console.log(
-        playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
-      );
-    
-    // check enemy's health
-    if (enemyHealth <= 0) {
-    window.alert(enemyName + " has died!");
-    } 
-    else {
-    window.alert(enemyName + " still has " + enemyHealth + " health left.");
-    }
-
-    // Subtract the value of `enemyAttack` from the value of `playerHealth` and use that result to update the value in the `playerHealth` variable.
-    playerHealth = playerHealth - enemyAttack;
-
-    // Log a resulting message to the console so we know that it worked.
-    console.log(
-        enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
-      );
-    
-    // check player's health
-    if (playerHealth <= 0) {
-        window.alert(playerName + " has died!");
-    } 
-    else {
-        window.alert(playerName + " still has " + playerHealth + " health left.");
-    }
-
-  };
-
-// execute function
-for(var i = 0; i < enemyNames.length; i++) {
-    fight(enemyNames[i]);
-  }
