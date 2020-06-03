@@ -68,7 +68,7 @@ var fight = function(enemyName) {
         }
 
         // if player choses to skip
-        } else if (promptFight === "skip" || promptFight === "SKIP") {
+        } if (promptFight === "skip" || promptFight === "SKIP") {
             // confirm user wants to skip
             var confirmSkip = window.confirm("Are you sure you'd like to quit?");
 
