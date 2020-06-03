@@ -43,6 +43,7 @@ var fight = function(enemyName) {
         // check enemy's health
         if (enemyHealth <= 0) {
             window.alert(enemyName + " has died!");
+            // exit robot from the fight loop
             break;
             } 
             
@@ -59,7 +60,7 @@ var fight = function(enemyName) {
         // check player's health
         if (playerHealth <= 0) {
             window.alert(playerName + " has died!");
-            //while (enemyHealth  > 0 && playerHealth > 0); 
+            // stops running application because player has died
             break;
 
             } else {
@@ -73,14 +74,15 @@ var fight = function(enemyName) {
 
             // if yes (true), leave fight
             if (confirmSkip) {
-            window.alert(playerName + " has decided to skip this fight. Goodbye!");
-            // subtract money from playerMoney for skipping
-            playerMoney = playerMoney - 10;
-            console.log("playerMoney", playerMoney);
-            }
+                window.alert(playerName + " has decided to skip this fight. Goodbye!");
+                // subtract money from playerMoney for skipping
+                playerMoney = playerMoney - 10;
+                console.log("playerMoney", playerMoney);
+                break;
+              }
             // if no (false), ask question again by running fight() again
             else {
-            fight();
+                fight();
             } 
             
             // this will prompt user to enter a valid option, but the program continues running at this point regardless
