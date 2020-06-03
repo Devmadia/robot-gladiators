@@ -26,7 +26,7 @@ for(var i = 0; i < enemyNames.length; i++) {
 
 // create function to fight enemy robots
 var fight = function(enemyName) {
-    // repeat and execute as long as the enemy robot is alive
+    // repeat and execute as long as the enemy robot is alive if player is also alive
     while (enemyHealth  > 0 && playerHealth > 0) {
     
     // asks for user input if they will fight or skip battle
