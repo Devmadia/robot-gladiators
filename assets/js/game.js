@@ -19,8 +19,6 @@ var enemyAttack = 12;
 
 // Details enemies by name
 for(var i = 0; i < enemyNames.length; i++) {
-
-
     // console.log(enemyNames[i]);
     // console.log(i);
     // console.log(enemyNames[i] + " is at " + i + " index");
@@ -83,6 +81,8 @@ var fight = function(enemyName) {
     }
   };
 
+// function to start a new game
+var startGame = function() {
     for (var i = 0; i < enemyNames.length; i++) {
         if (playerHealth > 0) {
             // let user know what round they are in, remember that arrays start at 0 so it needs to have 1 added to it
@@ -104,8 +104,11 @@ var fight = function(enemyName) {
                 break;
             }
         } 
-
+    }
     // execute function
     for(var i = 0; i < enemyNames.length; i++) {
         fight(enemyNames[i]);
     }
+
+// start the game when the page loads
+startGame();
