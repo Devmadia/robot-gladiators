@@ -24,6 +24,7 @@ var fightOrSkip = function() {
 
     // return true if user wants to leave
     return true;
+  }
 
   // if yes (true), leave fight
   if (confirmSkip) {
@@ -33,7 +34,7 @@ var fightOrSkip = function() {
       shop();
     }
   }
-}
+
 
 // create function to fight enemy robots
 var fight = function(enemy) {
@@ -105,7 +106,6 @@ var startGame = function() {
             // pass the pickedEnemyName variable's value into the fight function, where it will assume the value of the enemyName parameter
             fight(pickedEnemyObj);
         
-
             // if player is still alive and we're not at the last enemy in the array
             if (playerInfo.health > 0 && i < enemyInfo.length - 1) {
                 // ask if user wants to use the store before next round
@@ -150,21 +150,21 @@ var endGame = function() {
          
 var shop = function() {
     // ask player what they'd like to do
-  var shopOptionPrompt = window.prompt(
-    "Would you like to REFILL your health, UPGRADE your attack, or LEAVE the store? Please enter one: 'REFILL', 'UPGRADE', or 'LEAVE' to make a choice."
-  );
+    var shopOptionPrompt = window.prompt(
+      "Would you like to REFILL your health, UPGRADE your attack, or LEAVE the store? Please enter one 1 for REFILL, 2 for UPGRADE, or 3 for LEAVE."
+    );
+  
   // use switch to carry out action
+  debugger;
+  shopOptionPrompt = parseInt(shopOptionPrompt);
   switch (shopOptionPrompt) {
-    case "REFILL":
-    case "refill":
-        playerInfo.refillHealth();
-        break;
-    case "UPGRADE":
-    case "upgrade":
-        playerInfo.upgradeAttack();
-        break;
-    case "LEAVE": // new case
-    case "leave":
+      case 1:
+      playerInfo.refillHealth();
+      break;
+    case 2:
+      playerInfo.upgradeAttack();
+      break;
+    case 3:
       window.alert("Leaving the store.");
       break;
     default:
@@ -172,7 +172,7 @@ var shop = function() {
       shop();
       break;
   }
-};    
+}; 
 
 // function to set name
 var getPlayerName = function() {
@@ -252,5 +252,5 @@ for(var i = 0; i < enemyInfo.length; i++) {
 
 }
 
-        // start the game when the page loads
-        startGame();
+// start the game when the page loads
+startGame()
