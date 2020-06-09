@@ -213,33 +213,19 @@ var shop = function() {
 var getPlayerName = function() {
   var name = "";
 
-<<<<<<< HEAD
   while (name === "" || name === null) {
     name = prompt("What is your robot's name?");
     // debugger;
   }
 
-=======
-var getPlayerName = function(){
-  var name = "";
-
-  while(name === "" || name === null){
-    name = prompt("What is your robot's name?");
-  }
->>>>>>> bug/player-name
   console.log("Your robot's name is " + name);
   return name;
 }
 
-<<<<<<< HEAD
 /* GAME INFORMATION / VARIABLES */
 var playerInfo = {
     name: getPlayerName(),
     // name: window.prompt("What is your robot's name?"),
-=======
-var playerInfo = {
-    name: getPlayerName(),
->>>>>>> bug/player-name
     health: 100,
     attack: 10,
     money: 10,
